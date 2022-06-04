@@ -82,9 +82,13 @@ input {
   font-size: 18px;
   font-weight: 400;
   padding: 0 15px;
+   border: 1px solid gray;
 }
 input:focus {
-  outline: none;
+   border: 1px solid black;
+}
+input.error{
+    border: 1px solid red;
 }
 .login-form__caption {
   font-size: 18px;
