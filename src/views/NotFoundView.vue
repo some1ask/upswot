@@ -12,7 +12,9 @@ export default {
 <style scoped>
     .not-found{
         min-height: 100vh;
-        background: url('../assets/404.png') no-repeat;
-        background-size: cover;
+        background: url('../assets/404.png') #c2deef;
+        background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
     }
 </style>
