@@ -63,6 +63,7 @@ export default {
         return;
       }
       else{
+        localStorage.setItem('isAuthorized',true)
           this.$router.push({
               name:'about',
               params:{

@@ -6,9 +6,11 @@
       <button class="todo-list__button add" @click="addTodo">Add ToDo</button>
     </div>
 
-      <div class="todo-list-item" v-for="item in items" :key="item.index">
+      <div class="todo-list-item" v-for="(item,id) in items" :key="id">
         <div class="todo-list-item__caption" v-if="!item.isEditing">
-          {{ item.value }}
+          "item index" + {{ item.index }}
+          {{item}}
+          {{id}}
         </div>
         <div v-else>
           <input
@@ -21,14 +23,14 @@
           <button
           v-if="!item.isEditing"
             class="todo-list-item__button edit"
-            @click="editTodo(item.index)"
+            @click="editTodo(id)"
           >
             Edit Todo
           </button>
           <button
           v-else
             class="todo-list-item__button save"
-            @click="saveTodo(item.index)"
+            @click="saveTodo(id)"
           >
             Save Todo
           </button>
@@ -58,15 +60,14 @@ export default {
         return;
       } else {
         this.items.push({
-          index: this.items.length,
+          index: this.items.length + 1,
           value: this.value,
           isEditing: false,
         });
         this.value = "";
       }
 
-      console.log(typeof this.items);
-      console.log(typeof this.value);
+
     },
     removeTodo(index) {
       this.items = this.items.filter((element) => element.index !== index);
@@ -75,11 +76,14 @@ export default {
         let tempValue =  this.items[index].value;
       this.items[index].value = tempValue
       this.items[index].isEditing = !this.items[index].isEditing;
+
+
     },
     editTodo(index) {
-      console.log(index);
-    //   console.log(this.items[index]);
+
       this.items[index].isEditing = !this.items[index].isEditing;
+
+
     },
   },
 };
@@ -111,13 +115,14 @@ export default {
   align-items: center;
       max-width: 480px;
   padding: 0 30px;
+  flex-wrap: wrap;
 }
 .todo-list-item__caption{
     word-break: break-all;
     white-space: pre-line;
     /* max-width: 265px; */
     text-align: left;
-    width: 50%;
+    flex-basis: 50%;
 }
 .todo-list__button {
   outline: none;
@@ -137,6 +142,7 @@ export default {
 }
 .todo-list-item-buttons{
     display: flex;
+    flex-basis: 50%;
 }
 .add {
   background-color: lightgreen;
