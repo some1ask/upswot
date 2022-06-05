@@ -49,6 +49,12 @@ export default {
       },
     };
   },
+  mounted(){
+    if(localStorage.getItem('isAuthorized')){
+      localStorage.removeItem('isAuthorized')
+    }
+          
+  },
   methods: {
     validate(e) {
       e.preventDefault();
@@ -63,9 +69,9 @@ export default {
         return;
       }
       else{
-        localStorage.setItem('isAuthorized',true)
+        localStorage.setItem('isAuthorized',true);
           this.$router.push({
-              name:'about',
+              name:'todo',
               params:{
                   username:this.username
               }

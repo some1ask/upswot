@@ -154,18 +154,7 @@ z-index: 1;
   word-wrap: break-word; 
 }
 
-@media (max-width:1669px) {
-.business-title{
-  font-size: 45px;
-  max-width: 510px;
-}
-}
-@media (max-width:1440px) {
-.business-title{
-  font-size: 40px;
-  max-width: 450px;
-}
-}
+
 .business-title span{
   display: inline-block; 
 
@@ -231,5 +220,55 @@ z-index: 1;
   color: #fff;
   font-weight: 500;
   font-size: 16px;
+}
+@media (max-width:1669px) {
+.business-title{
+  font-size: 55px;
+  max-width: 510px;
+}
+}
+@media (max-width:1440px) {
+.business-title{
+  font-size: 42px;
+  max-width: 450px;
+}
+.wrapper{
+    padding: 0 15%;
+  }
+}
+@media screen and (max-width:1187px) {
+  .wrapper{
+    padding: 0 5%;
+  }
+  .business-title{
+    padding-top: 85px;
+  }
+  
+}
+@media screen and (max-width:768px) {
+.business-info-wrapper{
+  flex-direction: column;
+}
+.business-login-form{
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+.top-footer{
+  flex-direction: column;
+}
+.bottom-nav{
+      display: flex;
+      flex-direction: column;
+    margin-top: 20px;
+}
+.bottom-nav li{
+  margin: 10px 0px;
+}
+  
+}
+@media screen and (max-width:502px){
+  .login{
+    min-width: 100%;
+  }
 }
 </style>

@@ -5,7 +5,7 @@
         <img src="../assets/top-logo.svg" alt="" />
         <div class="main-content">
           <div class="main-content__message">
-            Thank you {{ $route.params.username }} !
+            Thank you {{ this.$route.params.username }} !
           </div>
           <TodoList />
         </div>
@@ -21,10 +21,11 @@ export default {
   components: {
     TodoList,
   },
-  created() {
+  mounted() {
     if (localStorage.getItem("isAuthorized")) {
       console.log("authorized");
-    } else {
+    }
+    if(Object.keys(this.$route.params).length == 0) {
       this.$router.replace({
         name: "login",
         path: "/login",
@@ -38,7 +39,12 @@ export default {
   max-width: 1920px;
   padding: 0 20%;
 }
+@media screen and (max-width:768px) {
+  .wrapper{
+    padding: 0 10%;
 
+  }
+}
 .about {
   min-height: 100vh;
   height: 100%;

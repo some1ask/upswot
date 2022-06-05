@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
-import AboutView from '../views/AboutView.vue'
+import ToDoView from '../views/ToDoView.vue'
+import NotFoundView from '../views/NotFoundView'
 
 const routes = [
   {
@@ -13,12 +14,11 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/about',
-    name: 'about',
-  
-    component: AboutView
-
-  }
+    path: '/todo',
+    name: 'todo',
+    component: ToDoView
+  },
+  { path: "/:pathMatch(.*)*", component: NotFoundView }
 ]
 
 const router = createRouter({
