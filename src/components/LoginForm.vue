@@ -96,7 +96,7 @@ input.error{
   color: #333333;
 }
 .login {
-  width: 480px;
+  min-width: 480px;
   background: #fff;
   box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.1);
 }
