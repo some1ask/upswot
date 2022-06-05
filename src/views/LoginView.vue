@@ -109,11 +109,6 @@ export default {
 };
 </script>
 <style scoped>
-header,
-main,
-footer {
-}
-
 .wrapper {
   max-width: 1920px;
   padding: 0 20%;

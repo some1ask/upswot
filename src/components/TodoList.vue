@@ -5,8 +5,8 @@
       <input type="text" placeholder="Add Something" v-model="value" />
       <button class="todo-list__button add" @click="addTodo">Add ToDo</button>
     </div>
-    <div class="todo-list-items" v-for="item in items" :key="item.index">
-      <div class="todo-list-item">
+
+      <div class="todo-list-item" v-for="item in items" :key="item.index">
         <div class="todo-list-item__caption" v-if="!item.isEditing">
           {{ item.value }}
         </div>
@@ -41,7 +41,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
 export default {
@@ -88,6 +87,9 @@ export default {
 <style scoped>
 .todo-list {
   max-width: 480px;
+  margin: 0 auto;
+  margin-top: 20px;
+
   background: #fff;
   box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -107,16 +109,15 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.todo-list-items {
-    max-width: 480px;
+      max-width: 480px;
   padding: 0 30px;
 }
 .todo-list-item__caption{
-    /* word-break: break-all; */
+    word-break: break-all;
     white-space: pre-line;
     /* max-width: 265px; */
-    flex: 1;
+    text-align: left;
+    width: 50%;
 }
 .todo-list__button {
   outline: none;
